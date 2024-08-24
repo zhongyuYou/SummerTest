@@ -1,0 +1,23 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/stu
+      username: root
+      password: "040325"
+mybatis:
+  mapper-locations: mapper/*.xml
+  type-aliases-package: com.cqu.student_backed.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+
+files:
+  upload:
+    path: 'D:\student\files'
+    fileMapper: '/profile/'
+

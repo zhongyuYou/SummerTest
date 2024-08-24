@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace:名称命名空间，标识唯一一个xml文件
+id:唯一标识查询标签，不能重复，取值与StudentMapper接口中的方法相对应
+-->
+<mapper namespace="com.cqu.student_backed.mapper.StudentMapper">
+    <!--账户注册-->
+    <update id="register" parameterType="Student">
+        update t_student set password = #{password},status= #{status}
+        where phone = #{phone}
+    </update>
+
+    <!--学生登陆-->
+    <select id="login" parameterType="java.lang.String">
+        select id,stuName,idCard,college,major,classes,stuId,phone,nation,address,image,password from t_student
+        where phone=#{phone} and password=#{password} and status = 1
+    </select>
+</mapper>
