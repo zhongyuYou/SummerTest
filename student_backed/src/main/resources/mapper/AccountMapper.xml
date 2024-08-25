@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace是命名空间,唯一标识一个xml文件-->
+<!--面相接口,则文件名为接口文件-->
+<mapper namespace="com.zretc.student_backed.mapper.AccountMapper">
+    <!--id:标识查询标签,取值不能重复,取值与StudentMapper接口定义方法相同-->
+    <update id="register" parameterType="Student">
+        update account SET password = #{password},status = #{status}
+        where phone = #{phone}
+    </update>
+    <!--学生登录的mysql语句-->
+    <select id="login" parameterType="java.lang.String">
+        select stuId,userName,phone
+        from  account
+        where stuId=#{stuId} and password = #{password} and status = 1
+    </select>
+</mapper>

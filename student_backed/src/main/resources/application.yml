@@ -1,23 +1,24 @@
+#服务端口
 server:
   port: 8081
 
+#数据库连接设置
 spring:
   datasource:
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/stu
+      url: jdbc:mysql://127.0.0.1:3306/newstudent1
       username: root
-      password: "040325"
+      password: 275043
+
 mybatis:
   mapper-locations: mapper/*.xml
-  type-aliases-package: com.cqu.student_backed.pojo
+  type-aliases-package: com.zretc.student_backed.pojo
   configuration:
-    map-underscore-to-camel-case: true
-
+    map-underscore-to-camel-case: true  #开启驼峰命名设置
 
 
 files:
   upload:
-    path: 'D:\student\files'
-    fileMapper: '/profile/'
-
+    path: 'D:\student\file\'  #文件上传路径
+    fileMapper: '/profile/'  # 文件映射路径

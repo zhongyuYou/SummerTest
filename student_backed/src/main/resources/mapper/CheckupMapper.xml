@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace是命名空间,唯一标识一个xml文件-->
+<!--面向接口,则文件名为接口文件-->
+<mapper namespace="com.zretc.student_backed.mapper.CheckupMapper">
+    <update id="fill" parameterType="Checkup">
+        update healthcheckup SET allergyHistory = #{allergyHistory},
+        timeId=#{timeId},checkupDate=#{checkupDate},gender=#{gender},phone=#{phone}
+        where stuId = #{stuId} and stuName = #{stuName}
+    </update>
+</mapper>
